@@ -1,0 +1,13 @@
+<div class="post-nav">
+	<div>{% if post.previous.url %}<a href="{{ post.previous.url}}" title="{{ post.previous.title }}">&larr; {{ post.previous.title }}{% endif %}</a></div>
+	<div>{% if post.next.url %}<a href="{{ post.next.url}}" title="{{ post.next.title }}">{{ post.next.title }} &rarr;</a>{% endif %}</div>
+</div>
+<h1>{{ post.title }}</h1>
+<p class="meta">{{ post.date | date_to_string }}</p>
+<div class="content">
+	{{ content }}
+</div>
+<div class="post-nav">
+	<div>{% if post.previous.url %}<a href="{{ post.previous.url}}" title="{{ post.previous.title }}">&larr; {{ post.previous.title }}{% endif %}</a></div>
+	<div>{% if post.next.url %}<a href="{{ post.next.url}}" title="{{ post.next.title }}">{{ post.next.title }} &rarr;</a>{% endif %}</div>
+</div>

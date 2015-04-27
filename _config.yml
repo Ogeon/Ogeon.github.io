@@ -1,0 +1,5 @@
+name: Another Time, Another Space
+markdown: kramdown
+kramdown:
+  input: GFM
+encoding: UTF-8
