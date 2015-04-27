@@ -99,11 +99,10 @@ nav h2 {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 100%;
 	font-weight: bold;
-	margin: 0;
+	margin: 1em 0 0 0;
 }
 
 .author {
-	margin-bottom: 1em;
 	display: table;
 }
 
@@ -136,7 +135,7 @@ nav h2 {
 
 nav p {
 	font-size: 70%;
-	margin: 0 0 1em 0;
+	margin: 1em 0 0 0;
 	text-align: justify;
 }
 
