@@ -30,7 +30,7 @@
 
 						<h2>Some Projects:</h2>
 						<ul class="posts">
-							{% assign projects = (site.github.public_repositories | sort: 'stargazers_count' pop: 3) %}
+							{% assign projects = (site.github.public_repositories | sort: 'stargazers_count' | pop: 3) %}
 							{% for project in projects reversed %}
 							<li><a href="{{ project.html_url }}" title="{{ project.name }}">{{ project.name }}</a></li>
 							{% endfor %}
