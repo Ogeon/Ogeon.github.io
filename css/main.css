@@ -134,6 +134,12 @@ nav h2 {
 	border: 1px solid #888;
 }
 
+nav p {
+	font-size: 70%;
+	margin: 0 0 1em 0;
+	text-align: justify;
+}
+
 .cols > div > article {
 	overflow: auto;
 	display: table-cell;
