@@ -6,6 +6,7 @@
 	box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.5) inset;
 	overflow: auto;
 	padding: 0.5em;
+	font-size: 130%;
 }
 .highlight .c { color: #999999; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
@@ -32,6 +33,7 @@
 .highlight .kp { color: #cc99cc; } /* Keyword.Pseudo */
 .highlight .kr { color: #cc99cc; } /* Keyword.Reserved */
 .highlight .kt { color: #cc99cc; } /* Keyword.Type */
+.highlight .kn { color: #cc99cc; } /* Keyword.Name */
 .highlight .m { color: #f99157 } /* Literal.Number */
 .highlight .s { color: #99cc99 } /* Literal.String */
 .highlight .n { color: #cccccc } /* Name */

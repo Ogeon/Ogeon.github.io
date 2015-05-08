@@ -10,25 +10,7 @@ body {
 	text-align: center;
 	font-family: 'Source Sans Pro', sans-serif;
 	color: #444;
-
-	/* Background pattern from subtlepatterns.com */
-	background: url("/images/fabric.png");
-}
-
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (   min--moz-device-pixel-ratio: 2),
-only screen and (     -o-min-device-pixel-ratio: 2/1),
-only screen and (        min-device-pixel-ratio: 2),
-only screen and (                min-resolution: 192dpi),
-only screen and (                min-resolution: 2dppx) { 
-	body {
-		background: url("/images/fabric@2X.png");
-	}
-
-	nav > div {
-		background: url("/images/paper_fibers@2X.png");
-	}
+	background: #e0deda;
 }
 
 h1, h2, h3, h4, h5 {
@@ -43,12 +25,47 @@ article h1 {
 	margin-bottom: 0;
 }
 
+article h2, article h3, article h4, article h5 {
+	margin-top: 1.5em;
+}
+
+hr, .footnotes {
+	margin-top: 3em;
+	border-color: #bbb;
+	border-width: 1px;
+	border-style: solid none none none;
+}
+
+.footnotes {
+	font-size: 80%;
+}
+
+code {
+	font-family: 'Ubuntu Mono', monospace;
+	font-size: 90%;
+}
+
+p code, li code {
+	background: #eee;
+	border-radius: 0.2em;
+	padding: 0.1em;
+	border: 1px solid #ddd;
+}
+
 a {
 	color: #000;
 }
 
 a:visited {
 	color: #666;
+}
+
+a.footnote {
+	text-decoration: none;
+}
+
+a.footnote:hover {
+	text-decoration: underline;
 }
 
 strong {
@@ -65,7 +82,7 @@ header h1 {
 }
 
 .rapper {
-	max-width: 60em;
+	max-width: 70em;
 	margin: 2em auto;
 	text-align: left;
 }
@@ -81,15 +98,20 @@ header h1 {
 }
 
 .cols > div > nav {
-	width: 15em;
+	width: 21.5%;
 	display: table-cell;
 	overflow: auto;
 	vertical-align:top;
 }
 
+.cols > div > .the-void {
+	width: 21.5%;
+	display: table-cell;
+}
+
 nav > div {
 	overflow: auto;
-	background: url("/images/paper_fibers.png"), white;
+	background: #f3f3f3;
 	box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.15);
 	margin: 1em 0;
 	padding: 1em;
@@ -129,7 +151,6 @@ nav h2 {
 	width: 4em;
 	height: 4em;
 	border-radius: 2em;
-	background: #376;
 	border: 1px solid #888;
 }
 
@@ -145,7 +166,7 @@ nav p {
 	box-shadow: 0 0 1em rgba(0, 0, 0, 0.15);
 	background: white;
 	vertical-align:top;
-	padding: 1em;
+	padding: 4em 2em;
 }
 
 article .content {
