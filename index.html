@@ -1,8 +1,11 @@
 ---
-layout: default
 ---
 
-{% assign post = site.posts[0] %}
-{% assign content = post.content %}
+{% assign page = site.posts[0] %}
 
+{% capture content %}
+{% assign content = page.content %}
 {% include post.html %}
+{% endcapture %}
+
+{% include default.html %}
