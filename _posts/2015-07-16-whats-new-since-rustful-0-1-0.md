@@ -325,7 +325,7 @@ That's all for this time. These change reports will probably appear
 sporadically in the future, whenever I feel like it's time. Possibly once
 every second month, if the pace continues like this.
 
-You can find more information about Rustful on [crated.io][crates] and in [the
+You can find more information about Rustful on [crates.io][crates] and in [the
 repository][repo]. I have also opened [a Gitter chat][gitter] for various
 discussions and questions. I'm dropping by from time to time, but your
 messages are persistent, so don't worry if I'm away or if you get there first
