@@ -1,6 +1,7 @@
-name: Another Time, Another Space
 markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
 encoding: UTF-8
+gems:
+  - jemoji
