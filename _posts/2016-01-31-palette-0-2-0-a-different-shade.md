@@ -23,7 +23,7 @@ this new domain will have the same color as at the nearest of its endpoints,
 so it's the same behavior as before, but with new endpoints. Let's take a look
 at an example:
 
-{% highlight rust %}
+```rust
 //Create a gradient from red to blue. The default domain is 0.0 to 1.0.
 let g1 = Gradient::new(vec![Rgb::new(1.0, 0.0, 0.0), Rgb::new(0.0, 0.0, 1.0)]);
 
@@ -34,7 +34,7 @@ assert_eq!(g1.get(0.0), g2.get(0.0)); //Ok
 assert_eq!(g1.get(0.3), g2.get(0.3)); //Ok
 assert_eq!(g1.get(0.5), g2.get(0.5)); //Ok
 assert_eq!(g1.get(0.7), g2.get(0.7)); //Error!
-{% endhighlight %}
+```
 
 The reason for the error is that `0.7` is outside the domain of `g2`, so it
 gives `RGB(0.5, 0.0, 0.5)` (the color at `0.5`) instead of `RGB(0.3, 0.0, 0.7)`.
@@ -48,7 +48,7 @@ has now been made a lot simpler. The basic arithmetic operations (`+`, `-`,
 `*` and `/`) has been implemented for each color space, and allows both
 another color and a plain number as the right hand side.
 
-{% highlight rust %}
+```rust
 let a = Rgb::new(1.0, 0.5, 0.3);
 let b = Rgb::new(0.1, 0.5, 0.2);
 
@@ -63,7 +63,7 @@ let c = a * 0.5;
 
 //...instead of this:
 let c = Rgb::new(a.red * 0.5, a.green * 0.5, a.blue * 0.5);
-{% endhighlight %}
+```
 
 The only exceptions are the hue based colors (HSV, HSL, etc.), since
 multiplication and division of the hue isn't well defined. They do still
@@ -97,19 +97,19 @@ up being the final solution and comes with some interesting possibilities.
 
 The new system introduces an `Alpha<C, T: Float>` type, which is defined as
 
-{% highlight rust %}
+```rust
 pub struct Alpha<C, T: Float> {
     color: C,
     alpha: T,
 }
-{% endhighlight %}
+```
 
 This type implements all of the operation traits, as well as `Deref` and
 `DerefMut` to also expose the content of `color`. This allows operations on
 `color` + `alpha` as a whole, as well as isolated operations on just `color`
 without any conversion. Take a look at this example from the documentation:
 
-{% highlight rust %}
+```rust
 use palette::{Rgb, Rgba};
 
 let mut c1 = Rgba::new(1.0, 0.5, 0.5, 0.8);
@@ -118,7 +118,7 @@ let c2 = Rgb::new(0.5, 1.0, 1.0);
 c1.color = c1.color * c2; //Leave the alpha as it is
 c1.blue += 0.2; //The color components can easily be accessed
 c1 = c1 * 0.5; //Scale both the color and the alpha
-{% endhighlight %}
+```
 
 The `Rgba` type is an alias for `Alpha<Rgb<T>, T>` and it implements the
 necessary functions for it to behave in the same way as `Rgb`. There are also

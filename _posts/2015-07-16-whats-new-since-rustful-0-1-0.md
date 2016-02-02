@@ -150,7 +150,7 @@ The `Loader` takes a path to a file and a `Response`, assigns a value to the
 `content-type` header and streams the file to the client. It can be as simple
 as this:
 
-{% highlight rust %}
+```rust
 if let Some(file) = context.variables.get("file") {
     //Make a full path from the file name and send it
     let path = format!("resources/{}", file);
@@ -158,7 +158,7 @@ if let Some(file) = context.variables.get("file") {
 
     //Handle eventual error in `res`...
 }
-{% endhighlight %}
+```
 
 The content type is guessed, based on the file extension, and will default to
 `application/octet-stream` if it's unknown. The mapping is done using [data
@@ -183,7 +183,7 @@ syntax is quite well established and that it's a relatively nice syntax (if we
 ignore that it's not so Rust-like). It may look something like this, when in
 use:
 
-{% highlight rust %}
+```rust
 #[macro_use]
 let server_result = Server {
     handlers: router,
@@ -191,16 +191,16 @@ let server_result = Server {
     content_type: content_type!(Application / Json; Charset = Utf8),
     ..Server::default()
 }.run();
-{% endhighlight %}
+```
 
 An other change, that you may notice if you have used this before, is that it
 now can take identifiers. The old string parsing is still there, but you can
 now opt for the builtin enum variants to skip the parsing step (even if it's
 small). This makes it possible to mix and match:
 
-{% highlight rust %}
+```rust
 content_type!(Application / "octet-stream"; "type" = "image/gif")
-{% endhighlight %}
+```
 
 You are also not required to import the enums or their variants to use this
 macro, since they are instead implicitly imported inside it. This is
@@ -217,7 +217,7 @@ as the previously mentioned ones. The first change is that handlers at local
 root paths (to `/`) no longer requires a path fragment when they are assigned.
 This changes the following:
 
-{% highlight rust %}
+```rust
 insert_routes! {
     &mut my_router => {
         "/" => Get: Api(Some(list_all)),
@@ -232,11 +232,11 @@ insert_routes! {
         }
     }
 }
-{% endhighlight %}
+```
 
 to this:
 
-{% highlight rust %}
+```rust
 insert_routes! {
     &mut my_router => {
         Get: Api(Some(list_all)),
@@ -251,7 +251,7 @@ insert_routes! {
         }
     }
 }
-{% endhighlight %}
+```
 
 The former example is still valid and may be preferred by some, but it's now
 also possible to skip those `"/" =>` (or `"" =>`) parts and avoid even more
@@ -264,7 +264,7 @@ convenience.
 The last change is that a trailing `,` is no longer a syntax error, so doing
 this is totally fine:
 
-{% highlight rust %}
+```rust
 insert_routes! {
     &mut my_router => {
         Get: Api(Some(list_all)),
@@ -279,7 +279,7 @@ insert_routes! {
         }, // <-- ...and here
     }
 }
-{% endhighlight %}
+```
 
 More info about this macro can be found in [the documentation][insert_routes_docs].
 

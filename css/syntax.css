@@ -1,7 +1,7 @@
 .highlight  {
 	color: #cccccc;
 	background: #2d2d2d;
-	margin-bottom: 1em;
+	margin: 1em 0em;
 	border-radius: 0.3em;
 	box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.5) inset;
 	overflow: auto;
@@ -9,7 +9,8 @@
 	font-size: 130%;
 }
 .highlight .c { color: #999999; font-style: italic } /* Comment */
-.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+/*.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .err { color: #cccccc; background-color: transparent; } /* Error, which is ignored */
 .highlight .k { color: #cc99cc; } /* Keyword */
 .highlight .o { font-weight: bold } /* Operator */
 .highlight .cm { color: #999999; font-style: italic } /* Comment.Multiline */
