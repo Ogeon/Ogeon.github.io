@@ -3,5 +3,5 @@ kramdown:
   input: GFM
   hard_wrap: false
 encoding: UTF-8
-gems:
+plugins:
   - jemoji

@@ -6,27 +6,20 @@
 
 
 body {
-	margin: 0 2em;
-	text-align: center;
+	padding: 0 2em;
+	margin: 0;
 	font-family: 'Source Sans Pro', sans-serif;
 	color: #444;
-	background: #e0deda;
+	background: #eee;
 }
 
 h1, h2, h3, h4, h5 {
-	font-family: 'Nixie One', 'Source Sans Pro', sans-serif;
-}
-
-h1 {
-	font-size: 190%;
-}
-
-article h1 {
-	margin-bottom: 0;
+	font-family: 'Arimo', 'Source Sans Pro', sans-serif;
+	color: #6699cc;
 }
 
 article h2, article h3, article h4, article h5 {
-	margin-top: 1.5em;
+	margin-top: 2em;
 }
 
 hr, .footnotes {
@@ -73,51 +66,48 @@ strong {
 }
 
 header {
-	text-align: center;
-	padding: 1em 0 3em 0;
+	transform: translate(-2.7em, -0.7em);
+	width: calc(100% + 4em);
 }
 
 header h1 {
-	font-size: 250%;
+	background: #f2777a;
+	color: white;
+	font-size: 300%;
+	padding: 0.2em 0;
+	display: inline;
+	line-height: 1.5em;
 }
 
 .rapper {
-	max-width: 70em;
-	margin: 2em auto;
-	text-align: left;
+	display: grid;
+	grid-template:
+		"info article            .  " auto
+		"info bottom             .  " auto
+		/1fr  minmax(auto, 40em) 1fr;
+	grid-gap: 2em;
+	margin: 4em 0;
 }
 
-.cols {
-	width: 100%;
-	display: table;
-	table-layout: fixed;
+aside {
+	justify-self: end;
+	grid-area: info;
+	max-width: 15em;
 }
 
-.cols > div {
-	display: table-row;
+aside p {
+	font-size: 70%;
+	margin: 1em 0 0 0;
+	text-align: justify;
 }
 
-.cols > div > nav {
-	width: 21.5%;
-	display: table-cell;
+aside > div {
 	overflow: auto;
-	vertical-align:top;
-}
-
-.cols > div > .the-void {
-	width: 21.5%;
-	display: table-cell;
-}
-
-nav > div {
-	overflow: auto;
-	background: #f3f3f3;
-	box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.15);
-	margin: 1em 0;
+	background: #f8f8f8;
 	padding: 1em;
 }
 
-nav h2 {
+aside h2 {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 100%;
 	font-weight: bold;
@@ -125,23 +115,16 @@ nav h2 {
 }
 
 .author {
-	display: table;
+	display: flex;
+	align-items: center;
 }
 
-.author > div {
-	display: table-cell;
-	vertical-align: middle;
-}
-
-.author > div:first-child {
-	width: 0;
-}
-
-.author > div:last-child {
+.author > :last-child {
+	flex: 1;
 	padding-left: 1em;
 }
 
-.author > div:last-child a {
+.author a:last-child {
 	font-size: 150%;
 	font-weight: bold;
 	text-decoration: none;
@@ -154,19 +137,11 @@ nav h2 {
 	border: 1px solid #888;
 }
 
-nav p {
-	font-size: 70%;
-	margin: 1em 0 0 0;
-	text-align: justify;
-}
-
-.cols > div > article {
-	overflow: auto;
-	display: table-cell;
-	box-shadow: 0 0 1em rgba(0, 0, 0, 0.15);
+article {
+	grid-area: article;
 	background: white;
-	vertical-align:top;
-	padding: 4em 2em;
+	padding: 0 2em 4em;
+	min-width: 0;
 }
 
 article .content {
@@ -191,16 +166,15 @@ article .content {
 .meta {
 	color: #888;
 	font-size: 70%;
-	margin-top: 4em;
 }
 
 .post-nav {
-	display: table;
-	width: 100%;
+	display: flex;
+	margin: 1em 0 2em;
 }
 
 .post-nav > div {
-	display: table-cell;
+	flex: 1;
 }
 
 .post-nav > div:last-child {
@@ -209,4 +183,50 @@ article .content {
 
 .post-nav a {
 	text-decoration: none;
+}
+
+@media(max-width: 75em) {
+	body {
+		padding: 0;
+	}
+
+	aside {
+		grid-area: bottom;
+		justify-self: stretch;
+		max-width: none;
+	}
+
+	aside > div {
+		display: grid;
+		grid-template:
+			"about projects" auto
+			"posts posts" auto
+			/1fr   1fr;
+	}
+
+	.about {
+		grid-area: about;
+	}
+
+	.projects {
+		grid-area: projects;
+	}
+
+	nav {
+		grid-area: posts;
+	}
+
+	nav ul {
+		columns: 2;
+	}
+}
+
+@media(max-width: 35em) {
+	aside > div {
+		display: block;
+	}
+
+	nav ul {
+		columns: 1;
+	}
 }

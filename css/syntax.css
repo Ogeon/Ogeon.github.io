@@ -1,12 +1,12 @@
-.highlight  {
+div.highlighter-rouge  {
 	color: #cccccc;
 	background: #2d2d2d;
-	margin: 1em 0em;
+	margin: 0em 0em;
 	border-radius: 0.3em;
 	box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.5) inset;
 	overflow: auto;
-	padding: 0.5em;
-	font-size: 130%;
+	padding: 1.5em;
+	min-width: 0;
 }
 .highlight .c { color: #999999; font-style: italic } /* Comment */
 /*.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
