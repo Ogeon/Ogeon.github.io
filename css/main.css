@@ -207,6 +207,7 @@ article .content {
 			"posts posts" auto
 			/1fr   1fr;
 		grid-gap: 1em;
+		padding: 3em 2em;
 	}
 
 	.about {
@@ -215,6 +216,10 @@ article .content {
 
 	.projects {
 		grid-area: projects;
+	}
+
+	.projects h2 {
+		margin-top: 0;
 	}
 
 	nav {
@@ -230,6 +235,10 @@ article .content {
 @media(max-width: 35em) {
 	aside > div {
 		display: block;
+	}
+
+	.projects h2 {
+		margin-top: 1em;
 	}
 
 	nav ul {
