@@ -38,6 +38,10 @@ code {
 	font-size: 90%;
 }
 
+p {
+	hyphens: auto;
+}
+
 p code, li code {
 	background: #eee;
 	border-radius: 0.2em;
@@ -45,12 +49,26 @@ p code, li code {
 	border: 1px solid #ddd;
 }
 
+p > img:not([class]) {
+	display: block;
+	max-width: 100%;
+	margin: auto;
+}
+
+ol, ul {
+	padding-left: 1.5em;
+}
+
+li {
+	margin: 0.25em 0;
+}
+
 a {
-	color: #000;
+	color: #446688;
 }
 
 a:visited {
-	color: #666;
+	color: #664488;
 }
 
 a.footnote {
@@ -71,7 +89,7 @@ header {
 }
 
 header h1 {
-	background: #f2777a;
+	background: #da595b;
 	color: white;
 	font-size: 300%;
 	padding: 0.2em 0;
@@ -112,6 +130,7 @@ aside h2 {
 	font-size: 100%;
 	font-weight: bold;
 	margin: 1em 0 0 0;
+	color: #446688;
 }
 
 .author {
@@ -168,7 +187,7 @@ article .content {
 }
 
 .meta {
-	color: #888;
+	color: #666;
 	font-size: 70%;
 }
 
@@ -201,29 +220,7 @@ article .content {
 	}
 
 	aside > div {
-		display: grid;
-		grid-template:
-			"about projects" auto
-			"posts posts" auto
-			/1fr   1fr;
-		grid-gap: 1em;
 		padding: 3em 2em;
-	}
-
-	.about {
-		grid-area: about;
-	}
-
-	.projects {
-		grid-area: projects;
-	}
-
-	.projects h2 {
-		margin-top: 0;
-	}
-
-	nav {
-		grid-area: posts;
 	}
 
 	nav ul {
@@ -235,10 +232,6 @@ article .content {
 @media(max-width: 35em) {
 	aside > div {
 		display: block;
-	}
-
-	.projects h2 {
-		margin-top: 1em;
 	}
 
 	nav ul {
