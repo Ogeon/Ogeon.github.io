@@ -42,7 +42,7 @@ p {
 	hyphens: auto;
 }
 
-p code, li code {
+p > code, li > code {
 	background: #eee;
 	border-radius: 0.2em;
 	padding: 0.1em;
