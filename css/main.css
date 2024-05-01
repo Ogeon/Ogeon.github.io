@@ -6,11 +6,13 @@
 
 
 body {
-	padding: 0 2em;
+	padding: 0 calc(2em * var(--spacing-scale));
 	margin: 0;
 	font-family: 'Source Sans Pro', sans-serif;
 	color: #444;
 	background: #eee;
+
+	--spacing-scale: 1;
 }
 
 h1, h2, h3, h4, h5 {
@@ -19,7 +21,8 @@ h1, h2, h3, h4, h5 {
 }
 
 main h2, main h3, main h4, main h5 {
-	margin-top: 2em;
+	margin-top: 2.5rem;
+	margin-bottom: 1rem;
 }
 
 hr, .footnotes {
@@ -84,8 +87,8 @@ strong {
 }
 
 header {
-	transform: translate(-2.7em, -0.7em);
-	width: calc(100% + 4em);
+	transform: translate(calc(-2em * var(--spacing-scale) - 0.7em), -0.7em);
+	width: calc(100% + 4em * var(--spacing-scale));
 }
 
 header h1 {
@@ -103,8 +106,8 @@ header h1 {
 		"info main            .  " auto
 		"info bottom             .  " auto
 		/1fr  minmax(auto, 40em) 1fr;
-	grid-gap: 2em;
-	margin: 4em 0;
+	grid-gap: calc(2em * var(--spacing-scale));
+	margin: calc(4em * var(--spacing-scale)) 0;
 }
 
 .side-panel {
@@ -156,12 +159,12 @@ header h1 {
 main {
 	grid-area: main;
 	background: white;
-	padding: 0 2em 4em;
+	padding: 0 calc(2em * var(--spacing-scale)) calc(2em * var(--spacing-scale));
 	min-width: 0;
 }
 
 main .content {
-	margin-bottom: 3em;
+	margin-bottom: 4em;
 }
 
 .posts {
@@ -185,10 +188,6 @@ main .content {
 .meta {
 	color: #666;
 	font-size: 70%;
-}
-
-.post-nav {
-	margin: 1em 0 2em;
 }
 
 .post-nav ul {
@@ -233,7 +232,7 @@ main .content {
 	}
 
 	.side-panel > div {
-		padding: 3em 2em;
+		padding: calc(2em * var(--spacing-scale));
 	}
 
 	.side-panel nav ul {
@@ -243,13 +242,8 @@ main .content {
 }
 
 @media(max-width: 35em) {
-	.rapper {
-		grid-gap: 1em;
-	}
-	
-	header {
-		transform: translate(-1.7em, -0.7em);
-		width: calc(100% + 2em);
+	body {
+		--spacing-scale: 0.5;
 	}
 
 	.side-panel > div {
@@ -258,9 +252,5 @@ main .content {
 
 	.side-panel nav ul {
 		columns: 1;
-	}
-
-	main {
-		padding: 0 1em 2em;
 	}
 }
