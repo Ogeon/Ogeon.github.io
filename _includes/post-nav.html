@@ -1,0 +1,20 @@
+<aside class="post-nav" aria-label="Previous and next post">
+	<ul>
+		{% if page.previous.url %}
+		<li class="previous">
+			<span class="sr-only">Previous: </span>
+			<a class="previous" href="{{ page.previous.url}}" title="{{ page.previous.title }}">
+				<span aria-hidden="true">&larr; </span>{{ page.previous.title }}
+			</a>
+		</li>
+		{% endif %}
+		{% if page.next.url %}
+		<li class="next">
+			<span class="sr-only">Next: </span>
+			<a href="{{ page.next.url}}" title="{{ page.next.title }}">
+				{{ page.next.title }}<span aria-hidden="true"> &rarr;</span>
+			</a>
+		</li>
+		{% endif %}
+	</ul>
+</aside>

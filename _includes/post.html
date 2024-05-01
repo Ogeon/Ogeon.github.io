@@ -1,12 +1,4 @@
-<div class="post-nav">
-	<div>{% if page.previous.url %}<a href="{{ page.previous.url}}" title="{{ page.previous.title }}">&larr; {{ page.previous.title }}</a>{% endif %}</div>
-	<div>{% if page.next.url %}<a href="{{ page.next.url}}" title="{{ page.next.title }}">{{ page.next.title }} &rarr;</a>{% endif %}</div>
-</div>
 <p class="meta">{{ page.date | date_to_string }} &mdash; <a href="{{ page.url }}">Permalink</a></p>
 <div class="content">
 	{{ content }}
-</div>
-<div class="post-nav">
-	<div>{% if page.previous.url %}<a href="{{ page.previous.url}}" title="{{ page.previous.title }}">&larr; {{ page.previous.title }}</a>{% endif %}</div>
-	<div>{% if page.next.url %}<a href="{{ page.next.url}}" title="{{ page.next.title }}">{{ page.next.title }} &rarr;</a>{% endif %}</div>
 </div>
