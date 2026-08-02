@@ -9,7 +9,7 @@ body {
 	padding: 0 calc(2em * var(--spacing-scale));
 	margin: 0;
 	font-family: 'Source Sans Pro', sans-serif;
-	color: #444;
+	color: black;
 	background: #eee;
 
 	--spacing-scale: 1;
@@ -100,12 +100,27 @@ header h1 {
 	line-height: 1.5em;
 }
 
+blockquote {
+	border-left: 0.4em solid #eee;
+	margin: 1em 0;
+	padding: 0.4em 2em;
+	color: #444;
+}
+
+blockquote > *:first-child {
+	margin-top: 0;
+}
+
+blockquote > *:last-child {
+	margin-bottom: 0;
+}
+
 .rapper {
 	display: grid;
 	grid-template:
 		"info main            .  " auto
 		"info bottom             .  " auto
-		/1fr  minmax(auto, 40em) 1fr;
+		/1fr  minmax(auto, 50em) 1fr;
 	grid-gap: calc(2em * var(--spacing-scale));
 	margin: calc(4em * var(--spacing-scale)) 0;
 }
@@ -218,6 +233,10 @@ main .content {
 	position: absolute;
 	white-space: nowrap; 
 	width: 1px;
+}
+
+.emoji {
+	vertical-align: center;
 }
 
 @media(max-width: 75em) {
